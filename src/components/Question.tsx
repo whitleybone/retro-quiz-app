@@ -11,7 +11,7 @@ const Question: React.FC<QuestionProps> = ({ data, onAnswer, onNext }) => {
   const [feedback, setFeedback] = useState<string | null>(null);
 
   // Load the click sound with the correct path for .mp3
-  const clickSound = new Audio("/assets/coin.mp3");
+  const clickSound = new Audio("/coin.mp3");
 
   const handleOptionClick = (option: string) => {
     setSelected(option);
