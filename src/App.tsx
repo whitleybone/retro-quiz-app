@@ -7,7 +7,7 @@ const App: React.FC = () => {
   const [isMuted, setIsMuted] = useState(false);
 
   // Use useRef to persist the audio object across renders
-  const backgroundMusicRef = useRef(new Audio("/src/assets/theme.wav"));
+  const backgroundMusicRef = useRef(new Audio("/retro-quiz-app/assets/theme.wav")); // Update path for GitHub Pages
 
   useEffect(() => {
     const backgroundMusic = backgroundMusicRef.current;

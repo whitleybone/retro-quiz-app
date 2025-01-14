@@ -10,14 +10,16 @@ const Question: React.FC<QuestionProps> = ({ data, onAnswer, onNext }) => {
   const [selected, setSelected] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<string | null>(null);
 
-  // Load the sound file
-  const clickSound = new Audio("/src/assets/coin.wav");
+  // Load the sound file with the correct path for GitHub Pages
+  const clickSound = new Audio("/retro-quiz-app/assets/coin.wav"); // Update the path
 
   const handleOptionClick = (option: string) => {
     setSelected(option);
 
     // Play the sound
-    clickSound.play();
+    clickSound.play().catch((error) => {
+      console.error("Error playing sound effect:", error);
+    });
 
     const isCorrect = option === data.answer;
     setFeedback(isCorrect ? "Correct!" : "Wrong!");
